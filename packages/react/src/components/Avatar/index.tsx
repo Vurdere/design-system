@@ -5,33 +5,19 @@ import { AvatarContainer, AvatarImage, AvatarFallback, AvatarContainerCity, Avat
 export interface AvatarProps extends ComponentProps<typeof AvatarImage> {}
 
 export function Avatar(props: AvatarProps) {
-  console.log('props ', props)
-  if(props?.city === 'true') {
     return (
-      <AvatarContainerCity>
+      <AvatarContainer>
         <AvatarImage {...props} />
 
         <AvatarFallback delayMs={600}>
           <User />
         </AvatarFallback>
-        
-      </AvatarContainerCity>
-    )
-  } else {
-    return (
-      <AvatarContainer>
-        <AvatarImage {...props} />
-  
-        <AvatarFallback delayMs={600}>
-          <User />
-        </AvatarFallback>
-  
+
         <AvatarCity delayMs={600}>
           <User />
         </AvatarCity>
       </AvatarContainer>
     )
-  }
 
 }
 
